@@ -27,10 +27,8 @@ function App() {
       customDomain: "https://icp0.io",
     });
 
-    alert(`connect: ${boolean} `);
-
     // @ts-ignore
-    alert(`astrox.agent._host0: ${astrox.agent?._host}`);
+    alert(`astrox.agent.host0: ${astrox.agent?._host}`);
   };
 
   const handlePrincipal = async () => {
@@ -52,6 +50,9 @@ function App() {
       idlFactory
     );
 
+    // @ts-ignore
+    alert(`astrox.agent.host1: ${astrox.agent?._host}`);
+
     // deposit 10000000 icp
     const result = enumResultFormat<bigint>(
       await actor.deposit({
@@ -67,9 +68,6 @@ function App() {
     } else {
       alert(`error: ${result.message}`);
     }
-
-    // @ts-ignore
-    alert(`astrox.agent._host: ${astrox.agent?._host}`);
   };
 
   return (
